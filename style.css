@@ -1,6 +1,6 @@
 /* --- Variables & Reset --- */
 :root {
-      background-image: url('https://img.freepik.com/premium-photo/pencil-checking-off-todo-list-3d-rendering-with-blue-background-copy-space_671359-10.jpg');
+      background-image: url('Olai-Chuvadi.webp');
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
@@ -13,14 +13,14 @@
     --text-light: #636e72;
     --shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
-.title{
+.title {
     text-align: center;
     font-size: 30px;
     font-weight: bold;
-    color: rgb(0, 0, 0);
+    color:rgb(42, 44, 44);
+    text-shadow: 2px 2px 4px rgba(10, 190, 91, 0.5);
+    margin-bottom: 20px;
    
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-   transform: translate(340px,-250px);
 }
 * {
     margin: 0;
@@ -32,10 +32,11 @@
 body {
     background: var(--bg-gradient);
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
     min-height: 100vh;
-    padding: 20px;
+    padding: 40px 20px 60px;
 }
 
 /*
@@ -47,17 +48,18 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.3);
     box-shadow: var(--shadow);
     width: 100%;
+    transform: translate(0px,100px);
     max-width: 450px;
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px); /* Frosted glass effect */
     /* Animation on page load */
-    animation: fadeInUp 0.5s ease-out;
-    margin-right: 800px;
+  
+    margin: 0;
     
 }
 .container:hover{
-    box-shadow: 10px 25px 65px 30px rgb(10, 47, 141);
-    transition: 0.8s
+    box-shadow: 10px 10px 60px 30px rgb(24, 113, 190);
+    transition: 0.7s
 }
 
 h1 {
@@ -116,6 +118,9 @@ button#addBtn:active {
 /* --- List Items & Animations --- */
 ul {
     list-style: none;
+    max-height: 55vh;
+    overflow-y: auto;
+    padding-right: 6px;
 }
 
 li {
@@ -237,5 +242,33 @@ li.checked span::before {
     to {
         opacity: 1;
         transform: translateX(0);
+    }
+}
+
+@media (max-width: 600px) {
+        ul {
+            max-height: 50vh;
+        }
+    body {
+        padding: 24px 16px 40px;
+    }
+
+    .title {
+        font-size: 24px;
+        margin-bottom: 16px;
+    }
+
+    .container {
+        padding: 1.75rem;
+        border-radius: 16px;
+    }
+
+    .input-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    button#addBtn {
+        width: 100%;
     }
 }
